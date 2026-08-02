@@ -1,23 +1,4 @@
 (() => {
-  const setVisibleHeight = () => {
-    const viewportHeight = window.visualViewport
-      ? window.visualViewport.height
-      : window.innerHeight;
-
-    document.documentElement.style.setProperty(
-      '--visible-height',
-      `${Math.floor(viewportHeight)}px`
-    );
-  };
-
-  setVisibleHeight();
-  window.addEventListener('resize', setVisibleHeight);
-  window.addEventListener('orientationchange', () => setTimeout(setVisibleHeight, 150));
-
-  if (window.visualViewport) {
-    window.visualViewport.addEventListener('resize', setVisibleHeight);
-  }
-
   const viber = document.querySelector('[data-viber]');
   const note = document.getElementById('viberNote');
 
@@ -29,6 +10,7 @@
     if (!mobile) {
       event.preventDefault();
       note.classList.add('show');
+      note.scrollIntoView({behavior:'smooth',block:'nearest'});
     }
   });
 })();

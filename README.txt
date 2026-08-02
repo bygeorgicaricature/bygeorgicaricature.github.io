@@ -1,2 +1,13 @@
-Upload: index.html, site-v6.css, site-v6.js, hero-v6.png, order-v6.jpg, event-v6.jpg
-This is the wide desktop website version, with a responsive mobile layout.
+# ByGeorgi Caricature Artist
+
+Official website:
+https://bygeorgicaricature.github.io
+
+Project files:
+- index.html
+- style.css
+- script.js
+- bygeorgi-final.png
+
+Desktop: wide centered layout.
+Mobile: full-width layout with normal vertical scrolling.
