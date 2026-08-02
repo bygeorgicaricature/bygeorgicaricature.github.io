@@ -207,3 +207,8 @@ h1 em{font-style:normal;color:var(--gold)}
   .reveal.is-visible{animation:none}
   .action-card,.social-icon{transition:none}
 }
+
+.svg-icon svg{width:56%;height:56%;display:block;fill:currentColor;stroke:currentColor;stroke-width:1.5}
+.svg-icon svg .cut{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+.action-card img{filter:grayscale(1) contrast(1.08);transition:filter .25s ease,transform .25s ease}
+.action-card:hover img,.action-card:focus-visible img{filter:grayscale(1) sepia(.16) saturate(1.4) contrast(1.12);transform:scale(1.035)}

@@ -16,3 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("blur", release);
   });
 });
+
+document.addEventListener("DOMContentLoaded",()=>{
+ const v=document.querySelector(".viber-link");
+ if(v){v.addEventListener("click",e=>{
+   if(!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)){
+     e.preventDefault();
+     alert("Viber chat се отваря през телефон с инсталиран Viber.");
+   }
+ });}
+});
