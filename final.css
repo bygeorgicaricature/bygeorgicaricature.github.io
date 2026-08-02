@@ -1,0 +1,113 @@
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  min-height:100%;
+  background:#050505;
+}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  overflow-x:hidden;
+}
+.page{
+  width:100%;
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  background:#050505;
+}
+.poster{
+  position:relative;
+  width:100vw;
+  max-width:520px;
+  line-height:0;
+  overflow:hidden;
+  background:#050505;
+  animation:appear .45s ease both;
+}
+.poster img{
+  display:block;
+  width:100%;
+  height:auto;
+  user-select:none;
+  -webkit-user-drag:none;
+}
+.tap{
+  position:absolute;
+  display:block;
+  border-radius:18px;
+  outline:none;
+  -webkit-tap-highlight-color:transparent;
+  transition:
+    transform .14s ease,
+    box-shadow .14s ease,
+    background-color .14s ease;
+}
+.tap:hover,
+.tap:focus-visible{
+  background:rgba(255,190,0,.08);
+  box-shadow:
+    0 0 0 2px rgba(255,190,0,.62),
+    0 0 22px rgba(255,190,0,.34);
+}
+.tap:active{
+  transform:scale(.975);
+  background:rgba(255,190,0,.16);
+  box-shadow:
+    0 0 0 2px rgba(255,214,80,.9),
+    inset 0 4px 10px rgba(0,0,0,.25);
+}
+
+/* Clickable zones aligned to the final artwork */
+.instagram{left:10.5%;top:29.2%;width:23%;height:7.8%;border-radius:50%}
+.facebook{left:38.5%;top:29.2%;width:23%;height:7.8%;border-radius:50%}
+.tiktok{left:66.5%;top:29.2%;width:23%;height:7.8%;border-radius:50%}
+
+.order{left:5%;top:38.0%;width:90%;height:9.7%;border-radius:24px}
+.event{left:5%;top:48.5%;width:90%;height:9.8%;border-radius:24px}
+.location{left:5%;top:59.0%;width:90%;height:9.5%;border-radius:24px}
+
+.whatsapp{left:5%;top:69.6%;width:90%;height:5.3%;border-radius:18px}
+.viber{left:5%;top:75.3%;width:90%;height:5.3%;border-radius:18px}
+.revolut{left:5%;top:81.0%;width:90%;height:5.3%;border-radius:18px}
+
+.viber-note{
+  display:none;
+  width:min(calc(100% - 24px),496px);
+  margin:10px auto 22px;
+  padding:12px 14px;
+  color:#fff;
+  background:#151515;
+  border:1px solid rgba(255,190,0,.6);
+  border-radius:12px;
+  text-align:center;
+  line-height:1.4;
+  font-size:14px;
+}
+.viber-note.show{display:block}
+
+@keyframes appear{
+  from{opacity:0;transform:translateY(6px)}
+  to{opacity:1;transform:none}
+}
+
+@media (min-width:700px){
+  .page{padding:18px 0 30px}
+  .poster{
+    border-radius:20px;
+    box-shadow:
+      0 0 0 1px rgba(255,190,0,.22),
+      0 24px 65px rgba(0,0,0,.72);
+  }
+}
+
+@media (max-width:699px){
+  .poster{
+    width:100vw;
+    max-width:none;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
