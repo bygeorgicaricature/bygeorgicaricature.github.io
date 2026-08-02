@@ -1,0 +1,110 @@
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#050505}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  overflow-x:hidden;
+}
+.screen{
+  min-height:100svh;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  background:
+    radial-gradient(circle at center top, rgba(46,35,15,.18), transparent 42%),
+    #050505;
+}
+.card{
+  position:relative;
+  width:100%;
+  max-width:500px;
+  aspect-ratio:1/2;
+  overflow:hidden;
+  background:#050505;
+  line-height:0;
+  animation:fadeIn .45s ease both;
+}
+.design{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:fill;
+  user-select:none;
+  -webkit-user-drag:none;
+}
+.tap{
+  position:absolute;
+  display:block;
+  border-radius:18px;
+  -webkit-tap-highlight-color:transparent;
+  outline:none;
+  transition:transform .14s ease,box-shadow .14s ease,background-color .14s ease;
+}
+.tap:hover,.tap:focus-visible{
+  background:rgba(255,190,36,.08);
+  box-shadow:0 0 0 2px rgba(255,190,36,.58),0 0 22px rgba(255,190,36,.30);
+}
+.tap:active{
+  transform:scale(.975);
+  background:rgba(255,190,36,.16);
+  box-shadow:0 0 0 2px rgba(255,211,92,.9),inset 0 4px 10px rgba(0,0,0,.22);
+}
+
+.instagram{left:18%;top:33.4%;width:17.8%;height:8.5%;border-radius:50%}
+.facebook{left:41%;top:33.4%;width:17.8%;height:8.5%;border-radius:50%}
+.tiktok{left:64.2%;top:33.4%;width:17.8%;height:8.5%;border-radius:50%}
+.order{left:9.7%;top:42.7%;width:80.6%;height:10.1%;border-radius:24px}
+.event{left:9.7%;top:53.2%;width:80.6%;height:10.1%;border-radius:24px}
+.map{left:9.7%;top:63.9%;width:80.6%;height:9%;border-radius:24px}
+.whatsapp{left:9.7%;top:73.2%;width:80.6%;height:4.8%;border-radius:18px}
+.viber{left:9.7%;top:78.2%;width:80.6%;height:4.8%;border-radius:18px}
+.revolut{left:9.7%;top:83.2%;width:80.6%;height:4.8%;border-radius:18px}
+
+.viber-message{
+  display:none;
+  width:min(calc(100% - 24px),760px);
+  margin:10px auto 20px;
+  padding:11px 13px;
+  color:#fff;
+  background:#151515;
+  border:1px solid rgba(235,171,34,.55);
+  border-radius:12px;
+  text-align:center;
+  line-height:1.4;
+  font-size:14px;
+}
+.viber-message.show{display:block}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+@media (min-width:700px){
+  .screen{
+    padding:18px 24px 28px;
+  }
+  .card{
+    width:min(76vw, 820px);
+    max-width:none;
+    border-radius:22px;
+    box-shadow:
+      0 0 0 1px rgba(235,171,34,.16),
+      0 24px 70px rgba(0,0,0,.72);
+  }
+}
+
+@media (min-width:1200px){
+  .card{
+    width:min(68vw, 900px);
+  }
+}
+
+@media (max-width:699px){
+  .card{
+    width:100vw;
+    max-width:none;
+    border-radius:0;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
